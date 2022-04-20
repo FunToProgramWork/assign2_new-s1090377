@@ -33,7 +33,6 @@ boolean rightPressed = false;
 
 void setup() {
 	size(640, 480, P2D);
-  frameRate(60);
 	// Enter Your Setup Code Here
   bgImg = loadImage("img/bg.jpg");
   soilImg = loadImage("img/soil.png");
@@ -48,19 +47,9 @@ void setup() {
   gameoverImg = loadImage("img/gameover.jpg");
   titleImg = loadImage("img/title.jpg");
   
+
   
-  
-  int [] soliderYseeds = {160,240,320,400,480};
-  soliderY = soliderYseeds[floor(random(0,4))];
-  int [] cabbageY = {240,320,400,480};
-  cabbageY = cabbageYseeds[floor(random(0,3))];
-  int [] cabbageX = {80,160,240,328,400,480};
-  cabbageX = cabbageXseeds[floor(random(0,5))];
-    
-  rect(hogX,hogY,80,80);
-  rect(cabbageX,cabbageY,80,80);
-  rect(soliderX,soliderY,80,80);
-  
+ 
 }
 
 void draw() {
@@ -75,6 +64,18 @@ void draw() {
   fill(253,184,19);
   ellipse(width-50,50,120,120);
   //
+  switch(gameState){
+      case GameStart:
+      image(titleImg,0,0);
+      image(startNormalImg,248,360);
+      if(mouseX >=248&&mouseX<=392&&mouseY>=360&&mouseY<=420){
+      image(startHoveredImg,248,360);
+      if(mousePressed){
+      gameState = GameRun;
+    }
+    }
+  }
+  
   
   
   
