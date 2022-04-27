@@ -10,6 +10,7 @@ PImage startNormalImg;
 PImage startHoveredImg;
 PImage gameoverImg;
 PImage titleImg;
+PImage cabbageImg;
 
 final int GameStart = 0;
 final int GameOver = 2;
@@ -46,6 +47,8 @@ void setup() {
   startNormalImg = loadImage("img/startNormal.png");
   gameoverImg = loadImage("img/gameover.jpg");
   titleImg = loadImage("img/title.jpg");
+  cabbageImg = loadImage("img/cabbage.png");
+  
   
 
   
@@ -58,6 +61,11 @@ void draw() {
   image(lifeImg,10,10);
   image(lifeImg,80,10);
   image(lifeImg,150,10);
+  image(groundhogIdleImg,320,80);
+  image(soldierImg ,130,320);
+  image(cabbageImg,560,160);
+  
+  
   //sun
   fill(255,255,0);
   ellipse(width-50,50,130,130);
@@ -76,7 +84,7 @@ void draw() {
     }
   }
   
-  
+
   
   
   
